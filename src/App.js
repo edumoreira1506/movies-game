@@ -1,11 +1,10 @@
 import React from 'react';
-import { QuizzesProvider } from '../contexts/quizzes';
+import Main from './pages/Main';
+import { QuizzesProvider } from './contexts/quizzes';
 
 const App = () => (
   <QuizzesProvider>
-    <h1>
-      My app!
-    </h1>
+    <Main />
   </QuizzesProvider>
 );
 
