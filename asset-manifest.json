@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/movies-game/static/css/main.d1b05096.chunk.css",
+    "main.js": "/movies-game/static/js/main.bf90aa41.chunk.js",
+    "main.js.map": "/movies-game/static/js/main.bf90aa41.chunk.js.map",
+    "runtime-main.js": "/movies-game/static/js/runtime-main.75784a90.js",
+    "runtime-main.js.map": "/movies-game/static/js/runtime-main.75784a90.js.map",
+    "static/js/2.e150a1f6.chunk.js": "/movies-game/static/js/2.e150a1f6.chunk.js",
+    "static/js/2.e150a1f6.chunk.js.map": "/movies-game/static/js/2.e150a1f6.chunk.js.map",
+    "index.html": "/movies-game/index.html",
+    "precache-manifest.d3aa7409d5da335e695a6ec9ae308f7d.js": "/movies-game/precache-manifest.d3aa7409d5da335e695a6ec9ae308f7d.js",
+    "service-worker.js": "/movies-game/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/movies-game/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.e150a1f6.chunk.js.LICENSE.txt": "/movies-game/static/js/2.e150a1f6.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/movies-game/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75784a90.js",
+    "static/js/2.e150a1f6.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.bf90aa41.chunk.js"
+  ]
+}
