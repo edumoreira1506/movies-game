@@ -1,3 +1,7 @@
+### movies-game
+
+Me and my mom always watch movies together, since than I was a little child, we watch a lot of movies, beeing more specific, we love Pixar Movies, so I made a game/quizz with sentences of some movies. The interface is very simple because is for moms :D I love you my queen!
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
