@@ -1,10 +1,11 @@
 import React from 'react';
 import Question from '../Question';
-import Box from '@material-ui/core/Box';
+import { Button, Box } from '@material-ui/core';
 
 const Questions = ({
   quizzes,
-  handleChangeCheck
+  handleChangeCheck,
+  handleFinishGame
 }) => (
   <div className="Questions">
     <Box
@@ -25,6 +26,11 @@ const Questions = ({
           />
         ))
       }
+      <Box marginTop="30px" marginBottom="30px">
+        <Button variant="contained" onClick={handleFinishGame} color="primary">
+          Checar respostas
+        </Button>
+      </Box>
     </Box>
   </div>  
 );

@@ -23,6 +23,7 @@ const Question = ({
               control={<Radio />}
               checked={option.checked}
               onChange={() => handleChangeCheck(option.answer)}
+              disabled={option.disabled}
             />
           ))
         }

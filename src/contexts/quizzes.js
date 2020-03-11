@@ -18,7 +18,16 @@ export const QuizzesProvider = ({ children }) => {
     setQuizzes(newQuizzes);
   }
 
-  const store = { quizzes, started, handleStartGame, handleChangeCheck }
+  const handleFinishGame = () => {
+    const { quizzes: newQuizzes, points } = Quizzes.finishGame(quizzes);
+
+    alert(`Você acertou ${points} de ${newQuizzes.length} perguntas.`);
+
+    setStarted(false);
+    setQuizzes(newQuizzes);
+  }
+
+  const store = { quizzes, started, handleStartGame, handleChangeCheck, handleFinishGame }
 
   return (
     <QuizzesContext.Provider value={store}>

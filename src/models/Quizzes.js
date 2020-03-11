@@ -44,8 +44,8 @@ const getRandomMovie = () => {
   return movie;
 }
 
-const answerTemplate = (answer, correct, checked = false) => ({
-  answer, correct, checked
+const answerTemplate = (answer, correct, checked = false, disabled = false) => ({
+  answer, correct, checked, disabled
 });
 
 const getMovieBySentence = sentence => {
@@ -87,4 +87,29 @@ export const updateOption = (quizzes, quizzIndex, answer) => {
   });
 
   return newQuizzes;
+}
+
+const getCorrectAnswer = quizz => quizz.options.find(item => Boolean(item.correct));
+
+const getPoints = quizzes => quizzes.reduce((points, quizz) => {
+  const correctAnswer = getCorrectAnswer(quizz);
+
+  if (correctAnswer.checked) {
+    return points + 1;
+  }
+
+  return points;
+}, 0)
+
+export const finishGame = quizzes => {
+  const newQuizzes = quizzes.map(item => ({
+    ...item,
+    options: item.options.map(itemOption => ({
+      ...itemOption,
+      disabled: true
+    }))
+  }));
+  const points = getPoints(quizzes);
+
+  return { quizzes: newQuizzes, points };
 }

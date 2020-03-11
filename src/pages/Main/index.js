@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { QuizzesContext } from '../../contexts/quizzes';
-import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
+import { Box, Button } from '@material-ui/core';
 import Questions from '../../components/Questions';
 
 const Main = () => {
@@ -9,15 +8,19 @@ const Main = () => {
     started,
     handleStartGame,
     quizzes,
-    handleChangeCheck
+    handleChangeCheck,
+    handleFinishGame
   } = useContext(QuizzesContext);
 
   return (
     started ? (
-      <Questions
-        quizzes={quizzes}
-        handleChangeCheck={handleChangeCheck}
-      />
+      <>
+        <Questions
+          quizzes={quizzes}
+          handleChangeCheck={handleChangeCheck}
+          handleFinishGame={handleFinishGame}
+        />
+      </>
     ) : (
       <Box
         display="flex"
