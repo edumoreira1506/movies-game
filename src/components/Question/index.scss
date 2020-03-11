@@ -1,0 +1,14 @@
+.Question {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    margin: 20px 0;
+    text-align: center;
+    font-family: Helvetica;
+  }
+}

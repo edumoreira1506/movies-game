@@ -44,8 +44,8 @@ const getRandomMovie = () => {
   return movie;
 }
 
-const answerTemplate = (answer, correct) => ({
-  answer, correct
+const answerTemplate = (answer, correct, checked = false) => ({
+  answer, correct, checked
 });
 
 const getMovieBySentence = sentence => {
