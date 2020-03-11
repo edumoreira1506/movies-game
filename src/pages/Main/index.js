@@ -5,12 +5,18 @@ import Button from '@material-ui/core/Button';
 import Questions from '../../components/Questions';
 
 const Main = () => {
-  const { started, handleStartGame, quizzes } = useContext(QuizzesContext);
+  const {
+    started,
+    handleStartGame,
+    quizzes,
+    handleChangeCheck
+  } = useContext(QuizzesContext);
 
   return (
     started ? (
       <Questions
         quizzes={quizzes}
+        handleChangeCheck={handleChangeCheck}
       />
     ) : (
       <Box

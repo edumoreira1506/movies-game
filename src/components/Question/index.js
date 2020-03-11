@@ -5,7 +5,8 @@ import './index.scss';
 
 const Question = ({
   sentence,
-  options
+  options,
+  handleChangeCheck
 }) => (
   <div className="Question">
     <h2 className="Question__title">
@@ -16,11 +17,12 @@ const Question = ({
         {
           options.map((option, index) => (
             <FormControlLabel
-              key={option}
+              key={`${option.answer}-${index}`}
               value={option.answer}
               label={option.answer}
               control={<Radio />}
               checked={option.checked}
+              onChange={() => handleChangeCheck(option.answer)}
             />
           ))
         }

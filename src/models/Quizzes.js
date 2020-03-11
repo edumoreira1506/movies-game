@@ -72,3 +72,19 @@ export const setup = () => {
 
   return answers;
 };
+
+export const updateOption = (quizzes, quizzIndex, answer) => {
+  const newQuizzes = quizzes.map((item, index) => {
+    if (index === quizzIndex) {
+      const newOptions = item.options.map(item => 
+        item.answer === answer ? { ...item, checked: true } : { ...item, checked: false }
+      );
+
+      return { ...item, options: newOptions };
+    }
+
+    return { ...item }
+  });
+
+  return newQuizzes;
+}

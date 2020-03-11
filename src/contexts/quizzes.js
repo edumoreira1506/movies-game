@@ -12,7 +12,13 @@ export const QuizzesProvider = ({ children }) => {
     setQuizzes(Quizzes.setup());
   }
 
-  const store = { quizzes, started, handleStartGame }
+  const handleChangeCheck = (quizzIndex, answer) => {
+    const newQuizzes = Quizzes.updateOption(quizzes, quizzIndex, answer);
+
+    setQuizzes(newQuizzes);
+  }
+
+  const store = { quizzes, started, handleStartGame, handleChangeCheck }
 
   return (
     <QuizzesContext.Provider value={store}>

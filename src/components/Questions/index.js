@@ -3,7 +3,8 @@ import Question from '../Question';
 import Box from '@material-ui/core/Box';
 
 const Questions = ({
-  quizzes
+  quizzes,
+  handleChangeCheck
 }) => (
   <div className="Questions">
     <Box
@@ -15,11 +16,12 @@ const Questions = ({
       flexDirection="column"
     >
       {
-        quizzes.map(item => (
+        quizzes.map((item, index) => (
           <Question
-            key={item}
+            key={`${item.sentence}-${index}`}
             sentence={item.sentence}
             options={item.options}
+            handleChangeCheck={answer => handleChangeCheck(index, answer)}
           />
         ))
       }
