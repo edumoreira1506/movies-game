@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,UACE,UAAW,CACX,eAAgB,CAChB,YAAa,CACb,qBAAsB,CACtB,kBAAmB,CACnB,sBAAuB,CAEvB,iBACE,aAAc,CACd,iBAAkB,CAClB,qBAAsB,CAX1B,KACE,QAAS,CACT,SAAU,CACV,iBAAkB","file":"main.f1275633.chunk.css","sourcesContent":["body {\n  margin: 0;\n  padding: 0;\n  overflow-x: hidden;\n}\n"]}
