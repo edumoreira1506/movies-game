@@ -4,6 +4,20 @@ Me and my mom always watch movies together, since than I was a little child, we 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Installing
+
+Clone the project.
+```console
+$ git clone git@github.com:edumoreira1506/movies-game.git
+$ cd movies-game
+```
+
+Copy the contents of the `.env.example` to `.env` then change with the credentials of your local environment.
+
+```console
+$ cp .env.example .env
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
