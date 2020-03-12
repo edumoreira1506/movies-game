@@ -6,10 +6,18 @@ export const QuizzesContext = createContext();
 export const QuizzesProvider = ({ children }) => {
   const [ quizzes, setQuizzes ] = useState([]);
   const [ started, setStarted ] = useState(false);
+  const [ loading, setLoading ] = useState(false);
 
   const handleStartGame = () => {
-    setStarted(true);
-    setQuizzes(Quizzes.setup());
+    setLoading(true);
+
+    const setupCallback = quizzesApi => {
+      setQuizzes(quizzesApi);
+      setStarted(true);
+      setLoading(false);
+    }
+
+    setQuizzes(Quizzes.setup(setupCallback));
   }
 
   const handleChangeCheck = (quizzIndex, answer) => {
@@ -27,7 +35,11 @@ export const QuizzesProvider = ({ children }) => {
     setQuizzes(newQuizzes);
   }
 
-  const store = { quizzes, started, handleStartGame, handleChangeCheck, handleFinishGame }
+  const store = {
+    quizzes, started,
+    handleStartGame, handleChangeCheck,
+    handleFinishGame, loading
+  };
 
   return (
     <QuizzesContext.Provider value={store}>

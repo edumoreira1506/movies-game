@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { QuizzesContext } from '../../contexts/quizzes';
 import { Box, Button } from '@material-ui/core';
 import Questions from '../../components/Questions';
+import Loading from '../../components/Loading';
 
 const Main = () => {
   const {
@@ -9,8 +10,11 @@ const Main = () => {
     handleStartGame,
     quizzes,
     handleChangeCheck,
-    handleFinishGame
+    handleFinishGame,
+    loading
   } = useContext(QuizzesContext);
+
+  if (loading) return <Loading />
 
   return (
     started ? (

@@ -1,76 +1,22 @@
-import quizzes from '../quizzes.json';
-import { sample, shuffle } from 'lodash';
+import * as GameService from '../services/GameService';
 
-export const getSentences = (amount, initialAnswers = []) => {
-  let answers = initialAnswers;
-
-  do {
-    const answer = getRandomAnswer();
-
-    if (!answers.includes(answer)) {
-      answers.push(answer);
-    }
-  } while (answers.length < amount);
-
-  return answers;
-}
-
-export const getMovies = (amount, initialMovies = []) => {
-  let movies = initialMovies;
-
-  do {
-    const movie = getRandomMovie();
-
-    if (!movies.includes(movie)) {
-      movies.push(movie);
-    }
-  } while (movies.length < amount);
-
-  return movies;
-}
-
-const getRandomAnswer = () => {
-  const movie = getRandomMovie();
-  const answers = quizzes[movie];
-  const answer = sample(answers);
-
-  return answer;
-}
-
-const getRandomMovie = () => {
-  const movies = Object.keys(quizzes);
-  const movie = sample(movies);
-
-  return movie;
-}
+const quizzTemplate = ({
+  sentence,
+  answers
+}) => ({
+  sentence,
+  options: answers.map(item => answerTemplate(item.answer, item.correct))
+});
 
 const answerTemplate = (answer, correct, checked = false, disabled = false) => ({
   answer, correct, checked, disabled
 });
 
-const getMovieBySentence = sentence => {
-  const movies = Object.keys(quizzes);
-  const movie = movies.find(item => quizzes[item].includes(sentence));
+export const setup = async (callback) => {
+  const { quizzes } = await GameService.setup();
+  const quizzesWithTemplate = quizzes.map(quizzTemplate);
 
-  return movie;
-}
-
-const getAnswers = sentences => sentences.map(sentence => {
-  const rightAnswer = getMovieBySentence(sentence);
-  const asnwers = getMovies(5, [ rightAnswer ]);
-  const asnwersWithTemplate = asnwers.map((item, index) =>
-    index ? answerTemplate(item, false) : answerTemplate(item, true)
-  );
-  const options = shuffle(asnwersWithTemplate);
-
-  return { sentence, options }
-});
-
-export const setup = () => {
-  const sentences = getSentences(5);
-  const answers = getAnswers(sentences);
-
-  return answers;
+  return callback(quizzesWithTemplate);
 };
 
 export const updateOption = (quizzes, quizzIndex, answer) => {

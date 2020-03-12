@@ -1,8 +1,8 @@
+import axios from 'axios';
+
 require('dotenv').config();
 
 const apiUrl = process.env.REACT_APP_URL_API;
-
-import axios from 'axios';
 
 const api = axios.create({
   baseURL: apiUrl,
