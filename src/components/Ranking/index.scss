@@ -1,0 +1,68 @@
+.RankingBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Ranking {
+  width: 95%;
+  height: auto;
+  max-height: 80vh;
+  overflow: hidden auto;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  &__header, &__body {
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica;
+    text-transform: uppercase;
+  }
+
+  &__header {
+    background: #ccc;
+  }
+
+  &__body {
+    background: #000;
+    color: #ccc;
+  }
+
+  &__area {
+    width: 33%;
+    text-align: left;
+    font-size: 15px;
+
+    @media (min-width: 768px) {
+      font-size: 1em;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    font-family: Helvetica;
+    font-size: 2em;
+  }
+}

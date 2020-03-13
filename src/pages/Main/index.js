@@ -3,6 +3,7 @@ import { QuizzesContext } from '../../contexts/quizzes';
 import { Box, Button } from '@material-ui/core';
 import Questions from '../../components/Questions';
 import Loading from '../../components/Loading';
+import Ranking from '../../components/Ranking';
 
 const Main = () => {
   const {
@@ -11,7 +12,9 @@ const Main = () => {
     quizzes,
     handleChangeCheck,
     handleFinishGame,
-    loading
+    loading,
+    toggleRanking,
+    showRanking
   } = useContext(QuizzesContext);
 
   if (loading) return <Loading />
@@ -27,7 +30,7 @@ const Main = () => {
       <Box
         display="flex"
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-around"
         width="100vw"
         height="auto"
         margin="10px 0"
@@ -40,7 +43,19 @@ const Main = () => {
         >
           Começar!
         </Button>
+        <Button
+          variant="contained"
+          onClick={toggleRanking}
+          color="primary"
+        >
+          Ranking
+        </Button>
       </Box>
+      {
+        showRanking && (
+          <Ranking onClose={toggleRanking} />
+        )
+      }
     </>
   );
 };

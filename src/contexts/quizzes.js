@@ -7,6 +7,9 @@ export const QuizzesProvider = ({ children }) => {
   const [ quizzes, setQuizzes ] = useState([]);
   const [ started, setStarted ] = useState(false);
   const [ loading, setLoading ] = useState(false);
+  const [ showRanking, setShowRanking ] = useState(false);
+
+  const toggleRanking = () => setShowRanking(!showRanking);
 
   const handleStartGame = () => {
     setLoading(true);
@@ -39,7 +42,8 @@ export const QuizzesProvider = ({ children }) => {
   const store = {
     quizzes, started,
     handleStartGame, handleChangeCheck,
-    handleFinishGame, loading
+    handleFinishGame, loading, toggleRanking,
+    showRanking
   };
 
   return (
