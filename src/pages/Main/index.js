@@ -17,27 +17,31 @@ const Main = () => {
   if (loading) return <Loading />
 
   return (
-    started ? (
-      <>
-        <Questions
-          quizzes={quizzes}
-          handleChangeCheck={handleChangeCheck}
-          handleFinishGame={handleFinishGame}
-        />
-      </>
-    ) : (
+    <>
+      <Questions
+        quizzes={quizzes}
+        handleChangeCheck={handleChangeCheck}
+        handleFinishGame={handleFinishGame}
+        started={started}
+      />
       <Box
         display="flex"
         alignItems="center"
         justifyContent="center"
         width="100vw"
-        height="100vh"
+        height="auto"
+        margin="10px 0"
       >
-        <Button variant="contained" onClick={handleStartGame} color="primary">
+        <Button
+          variant="contained"
+          onClick={handleStartGame}
+          color="primary"
+          disabled={started}
+        >
           Começar!
         </Button>
       </Box>
-    )
+    </>
   );
 };
 

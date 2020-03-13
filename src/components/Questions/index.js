@@ -5,7 +5,8 @@ import { Button, Box } from '@material-ui/core';
 const Questions = ({
   quizzes,
   handleChangeCheck,
-  handleFinishGame
+  handleFinishGame,
+  started
 }) => (
   <div className="Questions">
     <Box
@@ -23,14 +24,19 @@ const Questions = ({
             sentence={item.sentence}
             options={item.options}
             handleChangeCheck={answer => handleChangeCheck(index, answer)}
+            finished={!started}
           />
         ))
       }
-      <Box marginTop="30px" marginBottom="30px">
-        <Button variant="contained" onClick={handleFinishGame} color="primary">
-          Checar respostas
-        </Button>
-      </Box>
+      {
+        started && (
+          <Box marginTop="30px" marginBottom="30px">
+            <Button variant="contained" onClick={handleFinishGame} color="primary">
+              Checar respostas
+            </Button>
+          </Box>   
+        )
+      }
     </Box>
   </div>  
 );
