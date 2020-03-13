@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import * as Quizzes from '../models/Quizzes';
+import * as User from '../models/User';
 
 export const QuizzesContext = createContext();
 
@@ -30,7 +31,7 @@ export const QuizzesProvider = ({ children }) => {
   }
 
   const handleFinishGame = () => {
-    const name = window.prompt('Digite seu nome para registrarmos no ranking.');
+    const name = User.getUsername();
     const { quizzes: newQuizzes, points } = Quizzes.finishGame(quizzes, name);
 
     alert(`Você acertou ${points} de ${newQuizzes.length} perguntas.`);
@@ -45,6 +46,8 @@ export const QuizzesProvider = ({ children }) => {
     handleFinishGame, loading, toggleRanking,
     showRanking
   };
+
+  if (!User.isAuthenticated()) User.authenticate();
 
   return (
     <QuizzesContext.Provider value={store}>
