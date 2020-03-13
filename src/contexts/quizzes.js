@@ -27,7 +27,8 @@ export const QuizzesProvider = ({ children }) => {
   }
 
   const handleFinishGame = () => {
-    const { quizzes: newQuizzes, points } = Quizzes.finishGame(quizzes);
+    const name = window.prompt('Digite seu nome para registrarmos no ranking.');
+    const { quizzes: newQuizzes, points } = Quizzes.finishGame(quizzes, name);
 
     alert(`Você acertou ${points} de ${newQuizzes.length} perguntas.`);
 

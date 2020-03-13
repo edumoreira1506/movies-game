@@ -1,4 +1,5 @@
 import * as GameService from '../services/GameService';
+import * as RankingService from '../services/RankingService';
 
 const quizzTemplate = ({
   sentence,
@@ -47,7 +48,7 @@ const getPoints = quizzes => quizzes.reduce((points, quizz) => {
   return points;
 }, 0)
 
-export const finishGame = quizzes => {
+export const finishGame = (quizzes, name) => {
   const newQuizzes = quizzes.map(item => ({
     ...item,
     options: item.options.map(itemOption => ({
@@ -56,6 +57,14 @@ export const finishGame = quizzes => {
     }))
   }));
   const points = getPoints(quizzes);
+  const pointsRanking = getPointsRanking(points, quizzes.length);
+  const rankingUser = { points: pointsRanking, name };
+
+  RankingService.store(rankingUser);
 
   return { quizzes: newQuizzes, points };
 }
+
+const getPointsRanking = (rightAnswers, amountOfQuizzes) =>
+  100 * rightAnswers / amountOfQuizzes;
+
