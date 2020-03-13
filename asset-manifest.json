@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/movies-game/static/css/main.eb58966a.chunk.css",
+    "main.css": "/movies-game/static/css/main.8e845dbf.chunk.css",
     "main.js": "/movies-game/static/js/main.803bd351.chunk.js",
     "main.js.map": "/movies-game/static/js/main.803bd351.chunk.js.map",
     "runtime-main.js": "/movies-game/static/js/runtime-main.75784a90.js",
@@ -8,15 +8,15 @@
     "static/js/2.47941c08.chunk.js": "/movies-game/static/js/2.47941c08.chunk.js",
     "static/js/2.47941c08.chunk.js.map": "/movies-game/static/js/2.47941c08.chunk.js.map",
     "index.html": "/movies-game/index.html",
-    "precache-manifest.c3117f101eb8ef74a130bcfb6e87c06c.js": "/movies-game/precache-manifest.c3117f101eb8ef74a130bcfb6e87c06c.js",
+    "precache-manifest.5a66adec6af042f61056e8b8df156ab1.js": "/movies-game/precache-manifest.5a66adec6af042f61056e8b8df156ab1.js",
     "service-worker.js": "/movies-game/service-worker.js",
-    "static/css/main.eb58966a.chunk.css.map": "/movies-game/static/css/main.eb58966a.chunk.css.map",
+    "static/css/main.8e845dbf.chunk.css.map": "/movies-game/static/css/main.8e845dbf.chunk.css.map",
     "static/js/2.47941c08.chunk.js.LICENSE.txt": "/movies-game/static/js/2.47941c08.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.75784a90.js",
     "static/js/2.47941c08.chunk.js",
-    "static/css/main.eb58966a.chunk.css",
+    "static/css/main.8e845dbf.chunk.css",
     "static/js/main.803bd351.chunk.js"
   ]
 }
