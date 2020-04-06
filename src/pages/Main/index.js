@@ -31,9 +31,9 @@ const Main = () => {
         display="flex"
         alignItems="center"
         justifyContent="space-around"
+        flexDirection="column"
         width="100vw"
-        height="auto"
-        margin="10px 0"
+        height="100vh"
       >
         <Button
           variant="contained"
@@ -41,7 +41,7 @@ const Main = () => {
           color="primary"
           disabled={started}
         >
-          Começar!
+          Jogar com todos temas
         </Button>
         <Button
           variant="contained"
