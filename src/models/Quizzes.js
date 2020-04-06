@@ -1,5 +1,6 @@
 import * as GameService from '../services/GameService';
 import * as RankingService from '../services/RankingService';
+import * as Category from './Category';
 
 const quizzTemplate = ({
   sentence,
@@ -19,6 +20,13 @@ export const setup = async (callback) => {
 
   return callback(quizzesWithTemplate);
 };
+
+export const setupByCategory = async (category, callback) => {
+  const { quizzes } = await Category.getQuizzes(category);
+  const quizzesWithTemplate = quizzes.map(quizzTemplate);
+
+  return callback(quizzesWithTemplate);
+}
 
 export const updateOption = (quizzes, quizzIndex, answer) => {
   const newQuizzes = quizzes.map((item, index) => {

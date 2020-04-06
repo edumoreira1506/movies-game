@@ -14,7 +14,9 @@ const Main = () => {
     handleFinishGame,
     loading,
     toggleRanking,
-    showRanking
+    showRanking,
+    handleSelectCategory,
+    categories
   } = useContext(QuizzesContext);
 
   if (loading) return <Loading />
@@ -43,6 +45,19 @@ const Main = () => {
         >
           Jogar com todos temas
         </Button>
+        {
+          categories.map(category => (
+            <Button
+              variant="contained"
+              onClick={() => handleSelectCategory(category)}
+              color="primary"
+              disabled={started}
+              key={category.id}
+            >
+              { category.name }
+            </Button>
+          ))
+        }
         <Button
           variant="contained"
           onClick={toggleRanking}
